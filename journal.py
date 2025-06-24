@@ -60,3 +60,10 @@ print(report)
 
 with open("class_report.txt", "w") as f:
     f.write(report)
+
+new_grades = [["Jana", 99], ["Ziad", 78], ["Layla", 84]]
+
+for name, grade in new_grades:
+    if name not in class_journal:
+        class_journal[name] = []
+    class_journal[name].append(grade)
