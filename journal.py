@@ -56,3 +56,7 @@ Overall class average: {overall_avg}
 """
 
 print(report)
+
+
+with open("class_report.txt", "w") as f:
+    f.write(report)
