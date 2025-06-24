@@ -11,3 +11,7 @@ for name, grade in records:
     if name not in class_journal:
         class_journal[name] = []
     class_journal[name].append(grade)
+
+for student, grades in class_journal.items():
+    average = round(sum(grades) / len(grades), 2)
+    print(f"{student}: Grades: {grades} | Average: {average}")
