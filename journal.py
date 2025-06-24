@@ -12,6 +12,13 @@ for name, grade in records:
         class_journal[name] = []
     class_journal[name].append(grade)
 
+
+new_grades = [["Jana", 99], ["Ziad", 78], ["Layla", 84]]
+for name, grade in new_grades:
+    if name not in class_journal:
+        class_journal[name] = []
+    class_journal[name].append(grade)
+
 for student, grades in class_journal.items():
     average = round(sum(grades) / len(grades), 2)
     print(f"{student}: Grades: {grades} | Average: {average}")
@@ -33,15 +40,15 @@ for student, grades in class_journal.items():
     grade_range = max(grades) - min(grades)
     total_grades += len(grades)
     all_grades.extend(grades)
-
+    
     if avg > max_avg:
         max_avg = avg
         student_high_avg = student
-
+        
     if grade_range < min_range:
         min_range = grade_range
         student_consistent = student
-
+        
     if any(g < 70 for g in grades):
         below_70.append(student)
 
@@ -57,13 +64,5 @@ Overall class average: {overall_avg}
 
 print(report)
 
-
 with open("class_report.txt", "w") as f:
     f.write(report)
-
-new_grades = [["Jana", 99], ["Ziad", 78], ["Layla", 84]]
-
-for name, grade in new_grades:
-    if name not in class_journal:
-        class_journal[name] = []
-    class_journal[name].append(grade)
